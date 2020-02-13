@@ -1,0 +1,441 @@
+<menu>
+<!-- MENU ENTRY: define default choice -->
+<level>1
+	<title>Menu for CSL</title>
+	<choice><value>1</value><description>Script file name</description><action>set_value<var><name>script_filename</name><type>string</type></var></action><next_level></next_level></choice>
+	<choice><value>2</value><description>OTA Setup</description><action>none</action><next_level>2_1</next_level></choice>
+	<choice><value>3</value><description>Encryption</description><action>none</action><next_level>3_1</next_level></choice>
+	<choice><value>4</value><description>Generate file name</description><action>none</action><next_level>3_1</next_level></choice>
+	<choice><value>3</value><description>Set script file</description><action>none</action><next_level>3_1</next_level></choice>
+	<choice><description>Other : Exit</description><action>exit</action></choice>
+</level>
+<level>2_1<!-- get over the air parameter -->
+	<title>Over the Air Parameters</title>
+	<choice><value>0</value><description>Reader RF default parameters</description><next_level>2_1_1</next_level><next_level>2_1_1</next_level></choice>
+	<choice><value>1</value><description>Session Type and options</description><next_level>2_1_2</next_level><action>none</action></choice>
+	<choice><value>2</value><description>Encryption keys and options</description><next_level>2_1_3</next_level><action>none</action></choice>
+	<choice><value>3</value><description>Routing options</description><next_level>2_1_4</next_level><action>none</action></choice>
+	<choice><next_level>1</next_level></choice>	<!-- other Exit -->
+</level>
+<level>2_1_1 <!-- set over the defaults parameters -->
+	<title>Over the Air default parameters</title>
+	<choice><value>0</value><description>Get current parameters</description><next_level>2_1_1_1</next_level></choice>	<!-- if 0: specifify RF mode -->
+	<choice><value>1</value><description>Default Rf Mode</description><next_level>2_1_1_2</next_level><action>none</action></choice>
+	<choice><value>2</value><description>Default Tx Channel</description><next_level>2_1_1_3</next_level><action>none</action></choice>
+	<choice><value>3</value><description>Scan period</description><next_level>2_1_1_4</next_level><action>none</action></choice>
+	<choice><value>4</value><description>WUP Length</description><next_level>2_1_1_5</next_level><action>none</action></choice>
+	<choice><next_level>2_1</next_level></choice>	<!-- other Exit -->
+</level>
+<level>2_1_1_1 <!-- get over the air parameter -->
+	<display><description>Default RF mode :</description><action>get_value<var>default_rf_mode</var></action></display>
+	<display><description>Default Tx Channel :</description><action>get_value<var>default_tx_channel</var></action></display>
+	<display><description>Default Scan period :</description><action>get_value<var>default_scan_period</var></action></display>
+	<display><description>Default WUP Length period :</description><action>get_value<var>default_wup_length</var></action></display>
+	<choice><next_level>2_1_1</next_level></choice>	<!-- other Exit -->
+</level>
+<level>2_1_1_2 <!-- set default RF mode -->
+	<title>OTA: Default RF Mode</title>
+	<display><description>OTA: Default RF Mode</description><action>get_value<var>default_rf_mode</var></action></display>
+	<choice><value>0</value><description>868Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>1</value><description>868Mhz Frequency hopping 9600 bauds RF  NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>2</value><description>869Mhz Mono channel 500mw 19200 bauds NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>3</value><description>868Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>4</value><description>Reserved</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>5</value><description>Reserved</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>6</value><description>868Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>7</value><description>433Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>8</value><description>433Mhz Frequency hopping 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>9</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>A</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>B</value><description>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>C</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>D</value><description>866Mhz Mono channel 9600 bauds RF NRZ (India)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>E</value><description>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>F</value><description>433Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>10</value><description>433Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>default_rf_mode</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><next_level>2_1_1</next_level></choice>
+</level>
+<level>2_1_1_3 <!-- set default tx channel -->
+	<title>OTA: Default Tx Channel</title>
+	<display><description>OTA: Default Tx Channel</description><action>get_value<var>default_tx_channel</var></action></display>
+	<choice><value>0</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>1</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>2</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>3</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>4</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>5</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>6</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>7</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>8</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>9</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>A</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>B</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>C</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>D</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>E</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>F</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><value>10</value><description></description><action><value>set_value</value><var><name>default_tx_channel</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><next_level>2_1</next_level></choice>
+</level>
+<level>2_1_1_4 <!-- set default scan period -->
+	<title>OTA: Default scan period</title>
+	<display><description>OTA: Default scan period</description><action>get_value<var>default_scan_period</var></action></display>
+	<choice><value></value><limit_low>20</limit_low><limit_max>20000</limit_max><description>Enter a value in ms between 20 to 20000</description><action><value>set_value</value><var><name>default_scan_period</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><next_level>2_1_1</next_level></choice>
+</level>
+<level>2_1_1_5 <!-- set default WUP length -->
+	<title>OTA: Default WUP period</title>
+	<display><description>OTA: Default WUP period</description><action>get_value<var>default_wup_length</var></action></display>
+	<choice><value></value><limit_low>20</limit_low><limit_max>20000</limit_max><description>Enter a value in ms between 20 to 20000</description><action><value>set_value</value><var><name>default_wup_length</name></var></action><next_level>2_1_1</next_level></choice>
+	<choice><next_level>2_1_1</next_level></choice>
+</level>
+<level>2_1_2 <!--OTA: Session type and options -->
+	<title>OTA: Session Type and options</title>
+	<choice><value>1</value><description>Session type</description><next_level>2_1_2_1</next_level></choice>
+	<choice><value>2</value><description>Activate encryption</description><next_level>2_1_2_2</next_level></choice>
+	<choice><value>3</value><description>Activate packing</description><next_level>2_1_2_3</next_level></choice>
+	<choice><value>4</value><description>Allow downgrade</description><next_level>2_1_2_4</next_level></choice>
+	<choice><value>5</value><description>Continue previous session</description><next_level>2_1_2_5</next_level></choice>
+	<choice><next_level>2_1</next_level></choice>
+</level>
+<level>2_1_2_1	<!-- OTA session type -->
+	<title>OTA: Session Type</title>
+	<display><description>OTA: Session Type</description><action>get_value<var>session_type</var></action></display>
+	<choice><value>0</value><description>Local applicative firmware upgrade</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>1</value><description>Local rescue firmware upgrade</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>2</value><description>Local bootloader firmware upgrade</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>3</value><description>Local use applicative firmware as rescue</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>4</value><description>Remote use applicative firmware as rescue</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>5</value><description>Local reboot on rescue firmware</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>6</value><description>remote reboot on rescue firmware</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>7</value><description>Applicative firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>8</value><description>Rescue firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>9</value><description>bootloader firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>10</value><description>Local My applicative firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>11</value><description>Local My rescue firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>12</value><description>Local My bootloader firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>13</value><description>Remote My applicative firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>14</value><description>Remote My rescue firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>15</value><description>Remote My bootloader firmware to push over the air</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>16</value><description>Local download applicative firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>17</value><description>Local download rescue firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>18</value><description>Local download bootloader firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>19</value><description>Remote download applicative firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>20</value><description>Remote download rescue firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>21</value><description>Remote download bootloader firmware to forward</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><value>22</value><description>Local applicative firmware upgrade</description><action><value>set_value</value><var><name>session_type</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><next_level>2_1_2</next_level></choice>	
+</level>
+<level>2_1_2_2 <!-- OTA: activate encryption -->
+	<title>OTA: activate encryption</title>
+	<display><description>OTA: activate encryption</description><action>get_value<var>ota_activate_encryption</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>1</limit_max><description>Activate encryption: No(0), Yes (1)</description><action><value>set_value</value><var><name>ota_activate_encryption</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><next_level>2_1_2</next_level></choice>
+</level>
+<level>2_1_2_3 <!-- OTA: activate packing -->
+	<title>OTA: activate packing</title>
+	<display><description>OTA: activate packing</description><action>get_value<var>ota_activate_packing</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>1</limit_max><description>Activate Packing: No(0), Yes (1)</description><action><value>set_value</value><var><name>ota_activate_packing</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><next_level>2_1_2</next_level></choice>
+</level>
+<level>2_1_2_4 <!-- OTA: allow downgrade -->
+	<title>OTA: allow downgrade</title>
+	<display><description>OTA: allow downgrade</description><action>get_value<var>ota_allow_downgrade</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>1</limit_max><description>Allow downgrade: No(0), Yes (1)</description><action><value>set_value</value><var><name>ota_allow_downgrade</name></var></action><next_level>2_1_2</next_level></choice>
+	<choice><next_level>2_1_2</next_level></choice>
+</level>
+<level>2_1_3 <!-- OTA: Encryption key and versions -->
+	<title>OTA: Encryption key and versions compatibility</title>
+	<choice><value>1</value><description>Set Password</description><next_level>2_1_3_1</next_level></choice>
+	<choice><value>2</value><description>Set Transaction Id</description><next_level>2_1_3_2</next_level></choice>
+	<choice><value>3</value><description>Rescue Firmware Number (Platform Id) </description><next_level>2_1_3_3</next_level></choice>
+	<choice><value>4</value><description>Firmware Number (Platform Id) of Device to upgrade</description><next_level>2_1_3_4</next_level></choice>	
+	<choice><value>5</value><description>Set New Firmware Version</description><next_level>2_1_3_5</next_level></choice>	
+	<choice><value>6</value><description>Set Start Range of Current FW version targeted</description><next_level>2_1_3_6</next_level></choice>
+	<choice><value>7</value><description>Set End Range of Current FW version targeted</description><next_level>2_1_3_7</next_level></choice>
+	<choice><next_level>2_1</next_level></choice>
+</level>
+<level>2_1_3_1 <!-- OTA: set encryption key -->
+	<title>OTA: set Encryption Key</title>
+	<display><description>OTA Frame Encryption Key (8bytes) :</description><action>get_value<var>ota_frame_encryption_key</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>OTA Frame Encryption Key (8bytes)</description><action><value>set_value</value><var><name>ota_frame_encryption_key</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_2 <!-- OTA: set transaction Id -->
+	<title>OTA: set Transaction Id</title>
+	<display><description>OTA: set Transaction Id</description><action>get_value<var>ota_transaction_id</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>65535</limit_max><description>OTA Transaction Id (decimal : min 0-max 65535)</description><action><value>set_value</value><var><name>ota_transaction_id</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_3 <!-- OTA set Rescue Firmware Number (check Platform Id!) -->
+	<title>OTA: set Rescue Firmware Number (check Platform Id!)</title>
+	<display><description>OTA: Oset Rescue Firmware Number (check Platform Id!)</description><action>get_value<var>rescue_firmware_number</var></action></display>
+	<choice><value></value><number_char>4</number_char><description>Rescue FW Number (hexa 2bytes aka 4 chars)</description><action><value>set_value</value><var><name>rescue_firmware_number</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_4 <!-- OTA: set Firmware number (Platform Id) of Device to Upgrade -->
+	<title>OTA: set Firmware number (Platform Id) of Device to Upgrade</title>
+	<display><description>OTA: set Firmware number (Platform Id) of Device to Upgrade</description><action>get_value<var>target_device_firmware_number</var></action></display>
+	<choice><value></value><number_char>4</number_char><description>FW Number of Device to Upgrade (hexa 2bytes aka 4chars)</description><action><value>set_value</value><var><name>target_device_firmware_number</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_5 	<!-- OTA: set Version of New Firmware -->
+	<title>OTA: set Version of New Firmware </title>
+	<display><description>OTA: set Version of New Firmware</description><action>get_value<var>new_firmware_version</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>new Firmware version (hexa 8bytes)</description><action><value>set_value</value><var><name>new_firmware_version</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_6	<!-- OTA: set Start Range of Current FW version targeted -->
+	<title>OTA: set Start Range of Current FW version targeted</title>
+	<display><description>FW version start range</description><action>get_value<var>device_current_version_start_range</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>FW version start range(hexa 8bytes)</description><action><value>set_value</value><var><name>device_current_version_start_range</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_3_7	<!-- OTA: set End Range of Current FW version targeted -->
+	<title>OTA: set End Range of Current FW version targeted</title>
+	<display><description>FW version end range</description><action>get_value<var>device_current_version_end_range</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>FW version end range(hexa 8bytes)</description><action><value>set_value</value><var><name>device_current_version_end_range</name></var></action><next_level>2_1_3</next_level></choice>
+	<choice><next_level>2_1_3</next_level></choice>
+</level>
+<level>2_1_4 <!-- OTA: Routing options -->
+	<title>OTA: Encryption key and versions compatibility</title>
+	<choice><value>1</value><description>Set Number of Relays</description><next_level>2_1_4_1</next_level></choice>
+	<choice><value>2</value><description>Relay route Device 1</description><next_level>2_1_4_2</next_level></choice>
+	<choice><value>3</value><description>Relay route Device 2</description><next_level>2_1_4_3</next_level></choice>
+	<choice><value>4</value><description>Relay route Device 3</description><next_level>2_1_4_4</next_level></choice>	
+	<choice><value>5</value><description>Destination Device</description><next_level>2_1_4_5</next_level></choice>	
+	<choice><value>6</value><description>Rf mode and channels routing options</description><next_level>2_1_4_6</next_level></choice>
+	<choice><value>7</value><description>Unicast Multicast Broadcast</description><next_level>2_1_4_7</next_level></choice>
+	<choice><value>8</value><description>Group Multicast</description><next_level>2_1_4_8</next_level></choice>
+	<choice><value>9</value><description>To forward to which device</description><next_level>2_1_4_9</next_level></choice>	
+	<choice><next_level>2_1</next_level></choice>
+</level>
+<level>2_1_4_1 <!-- OTA Routing: Number of relays -->
+	<title>OTA Routing: Number of relays</title>
+	<display><description>OTA Routing: Number of relays</description><action>get_value<var>ota_routing_nb_relays</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>3</limit_max><description>Number of relays (0 to 3)</description><action><value>set_value</value><var><name>ota_routing_nb_relays</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_2 <!-- OTA: Relay 1 -->
+	<title>OTA: Relay 1</title>
+	<display><description>OTA Routing: Relay 1</description><action>get_value<var>relay_1_address</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Set Relay 1 Address</description><action><value>set_value</value><var><name>relay_1_address</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_3 <!-- OTA: Relay 2 -->
+	<title>OTA: Relay 2</title>
+	<display><description>OTA Routing: Relay 2</description><action>get_value<var>relay_2_address</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Set Relay 2 Address</description><action><value>set_value</value><var><name>relay_2_address</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_4 <!-- OTA: Relay 3 -->
+	<title>OTA: Relay 3</title>
+	<display><description>OTA Routing: Relay 3</description><action>get_value<var>relay_3_address</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Set Relay 3 Address</description><action><value>set_value</value><var><name>relay_3_address</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_5 <!-- OTA: Destination address -->
+	<title>OTA: Destination device</title>
+	<display><description>OTA: Destination Device Address</description><action>get_value<var>destination_address</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Set Destination Device Address</description><action><value>set_value</value><var><name>destination_address</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_6 <!-- OTA : RF mode and channels routing options -->
+	<title>OTA: RF mode and channels routing options</title>
+	<choice><value></value><description>Set RF mode, channels ...</description><next_level>2_1_4_6_1</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_7 <!-- OTA: Unicast-Multicast-Broadcast transmission -->
+	<title>OTA: Unicast-Multicast-Broadcast transmission</title>
+	<display><description>OTA: Unicast-Multicast-Broadcast transmission</description><action>get_value<var>ota_addressing_type</var></action></display>
+	<choice><value>1</value><description>Unicast</description><action><value>set_value</value><var><name>ota_addressing_type</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><value>2</value><description>Multicast</description><action><value>set_value</value><var><name>ota_addressing_type</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><value>3</value><description>Broadcast</description><action><value>set_value</value><var><name>ota_addressing_type</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>	
+</level>
+<level>2_1_4_8 <!-- OTA: Group Multicast -->
+	<title>OTA: Group Multicast</title>
+	<display><description>OTA: Group Multicast</description><action>get_value<var>ota_group_multi_cast</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>255</limit_max><description>Set Group Multicast (from 0 to 256)</description><action><value>set_value</value><var><name>ota_group_multi_cast</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_9 <!-- OTA: to forward to which device -->
+	<title>OTA: to forward to which device</title>
+	<choice><value>1</value><description>Device to forward to Unicast Multicast Broadcast</description><next_level>2_1_4_9_1</next_level></choice>
+	<choice><value>2</value><description>Device to forward to Address</description><next_level>2_1_4_9_2</next_level></choice>	
+	<choice><value>3</value><description>Device to forward to Tx Channel</description><next_level>2_1_4_9_3</next_level></choice>	
+	<choice><value>4</value><description>Device to forward to Rf Mode</description><next_level>2_1_4_9_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_6_1 <!-- OTA : set relays RF parameters -->
+	<title>OTA : Relay Rf Parameters</title>
+	<choice><value>0</value><description>Relays Get current parameters</description><next_level>2_1_4_6_1_0</next_level>	</choice>	<!-- if 0: specifify RF mode -->
+	<choice><value>1</value><description>Relay Rf Mode</description><next_level>2_1_4_6_1_1</next_level><action>none</action></choice>
+	<choice><value>2</value><description>Relay Tx Channel</description><next_level>2_1_4_6_1_2</next_level><action>none</action></choice>
+	<choice><value>3</value><description>Relay Scan period</description><next_level>2_1_4_6_1_3</next_level><action>none</action></choice>
+	<choice><value>4</value><description>Relay WUP Length</description><next_level>2_1_4_6_1_4</next_level><action>none</action></choice>
+	<choice><next_level>2_1_4_6</next_level></choice>	<!-- other Exit -->
+</level>
+<level>2_1_4_6_1_0 <!-- OTA: get Relay RF parameters -->
+	<title>OTA: get Relay RF parameters</title>
+	<display><description>Relay RF mode :</description><action>get_value<var>relay_rf_mode</var></action></display>
+	<display><description>Relay Tx Channel :</description><action>get_value<var>relay_tx_channel</var></action></display>
+	<display><description>Relay Scan period :</description><action>get_value<var>relay_scan_period</var></action></display>
+	<display><description>Relay WUP Length period :</description><action>get_value<var>relay_wup_length</var></action></display>
+	<choice><next_level>2_1_4_6_1</next_level></choice>	<!-- other Exit -->
+</level>
+<level>2_1_4_6_1_1 <!-- OTA: set Relay RF mode -->
+	<title>OTA Relay: Rf mode</title>
+	<display><description>OTA Relay: Rf mode</description><action>get_value<var>relay_rf_mode</var></action></display>
+	<choice><value>0</value><description>868Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>1</value><description>868Mhz Frequency hopping 9600 bauds RF  NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>2</value><description>869Mhz Mono channel 500mw 19200 bauds NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>3</value><description>868Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>4</value><description>Reserved</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>5</value><description>Reserved</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>6</value><description>868Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>7</value><description>433Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>8</value><description>433Mhz Frequency hopping 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>9</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>A</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>B</value><description>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>C</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>D</value><description>866Mhz Mono channel 9600 bauds RF NRZ (India)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>E</value><description>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>F</value><description>433Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><value>10</value><description>433Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>relay_rf_mode</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><next_level>2_1_4_6_1</next_level></choice>
+</level>
+<level>2_1_4_6_1_2 <!-- OTA: set Relay tx channel -->
+	<title>OTA: Relay Tx Channel</title>
+	<display><description>OTA Relay: Tx Channel</description><action>get_value<var>relay_tx_channel</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>16</limit_max><description>Enter a value between 00 to 10 (hexa)</description><action><value>set_value</value><var><name>relay_tx_channel</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><next_level>2_1</next_level></choice>
+</level>
+<level>2_1_4_6_1_3 <!-- OTA: set relay scan period -->
+	<title>OTA: Relay scan period</title>
+	<display><description>OTA Relay: Scan Period</description><action>get_value<var>relay_scan_period</var></action></display>
+	<choice><value></value><limit_low>20</limit_low><limit_max>20000</limit_max><description>Enter a value in ms between 20 to 20000</description><action><value>set_value</value><var><name>relay_scan_period</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><next_level>2_1_4_6_1</next_level></choice>
+</level>
+<level>2_1_4_6_1_4 <!-- OTA: set relay WUP length -->
+	<title>OTA: Relay WUP period</title>
+	<display><description>OTA Relay: WUP Period</description><action>get_value<var>relay_wup_length</var></action></display>
+	<choice><value></value><limit_low>20</limit_low><limit_max>20000</limit_max><description>Enter a value in ms between 20 to 20000</description><action><value>set_value</value><var><name>relay_wup_length</name></var></action><next_level>2_1_4_6_1</next_level></choice>
+	<choice><next_level>2_1_4_6_1</next_level></choice>
+</level>
+<level>2_1_4_9_1 <!-- OTA: to forward to which device Unicast-Multicast-Broadcast -->
+	<title>OTA: Device to forward to Unicast-Multicast-Broadcast </title>
+	<display><description>OTA: Device to forward to Unicast-Multicast-Broadcast</description><action>get_value<var>ota_forward_addressing_type</var></action></display>
+	<choice><value>1</value><description>Unicast</description><action><value>set_value</value><var><name>ota_forward_addressing_type</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>2</value><description>Multicast</description><action><value>set_value</value><var><name>ota_forward_addressing_type</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>3</value><description>Broadcast</description><action><value>set_value</value><var><name>ota_forward_addressing_type</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><next_level>2_1_4_9</next_level></choice>	
+</level>
+<level>2_1_4_9_2 <!-- OTA: Device address to forward to -->
+	<title>OTA: Device address to forward to</title>
+	<display><description>OTA: Device address to forward to</description><action>get_value<var>destination_address_to_forward_to</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Set Device Address to Forward to</description><action><value>set_value</value><var><name>destination_address_to_forward_to</name></var></action><next_level>2_1_4</next_level></choice>
+	<choice><next_level>2_1_4</next_level></choice>
+</level>
+<level>2_1_4_9_3 <!-- OTA: Tx Channel to forward to -->
+	<title>OTA: Device address to Tx Channel</title>
+	<display><description>OTA: Device address to Tx Channel</description><action>get_value<var>tx_channel_to_forward_to</var></action></display>
+	<choice><value></value><limit_low>0</limit_low><limit_max>16</limit_max><description>Enter a value between 00 to 10 (hexa)</description><action><value>set_value</value><var><name>tx_channel_to_forward_to</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><next_level>2_1_4_9</next_level></choice>
+</level>
+<level>2_1_4_9_4 <!-- OTA: RF mode to forward to-->
+	<title>OTA : RF mode for Device To Forward To</title>
+	<display><description>OTA : RF mode for Device To Forward To</description><action>get_value<var>to_forward_to_rf_mode</var></action></display>
+	<choice><value>0</value><description>868Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>1</value><description>868Mhz Frequency hopping 9600 bauds RF  NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>2</value><description>869Mhz Mono channel 500mw 19200 bauds NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>3</value><description>868Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>4</value><description>Reserved</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>5</value><description>Reserved</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>6</value><description>868Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>7</value><description>433Mhz Mono channel 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>8</value><description>433Mhz Frequency hopping 9600 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>9</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>A</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>B</value><description>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>C</value><description>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>D</value><description>866Mhz Mono channel 9600 bauds RF NRZ (India)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>E</value><description>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>F</value><description>433Mhz Mono channel 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><value>10</value><description>433Mhz  Frequency hopping 19200 bauds RF NRZ</description><action><value>set_value</value><var><name>to_forward_to_rf_mode</name></var></action><next_level>2_1_4_9</next_level></choice>
+	<choice><next_level>2_1_4_9</next_level></choice>
+</level>
+<level>3_1	<!-- Encrypt setup -->
+	<title>ENCRYPTION Setup</title>
+	<choice><value>1</value><description>ENCRYPT : AES Password</description><next_level>3_1_1</next_level></choice>
+	<choice><value>2</value><description>ENCRYPT : Random Value for key index</description><next_level>3_1_2</next_level></choice>
+	<choice><value>3</value><description>ENCRYPT : Master range and time validity</description><next_level>3_1_3</next_level></choice>
+	<choice><value>4</value><description>ENCRYPT : Slave range and certificate</description><next_level>3_1_3</next_level></choice>	
+	<choice><next_level>3</next_level></choice>
+</level>
+<level>3_1_1 <!-- ENCRYPT: set AES password -->
+	<title>ENCRYPT: set AES Password</title>
+	<display><description>ENCRYPT : AES Password</description><action>get_value<var>encryption_password</var></action></display>
+	<choice><value></value><number_char>16</number_char><description>AES password (8bytes 16chars)</description><action><value>set_value</value><var><name>encryption_password</name></var></action><next_level>3_1</next_level></choice>
+	<choice><next_level>3_1</next_level></choice>
+</level>
+<level>3_1_2 <!-- ENCRYPT: set Random Value for key index -->
+	<title>ENCRYPT: set Random Value for key index</title>
+	<display><description>ENCRYPT: Random Value for key index</description><action>get_value<var>encryption_random_value</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Random Value for key index (4bytes 8 chars)</description><action><value>set_value</value><var><name>encryption_random_value</name></var></action><next_level>3_1</next_level></choice>
+	<choice><next_level>3_1</next_level></choice>
+</level>
+<level>3_1_3 <!-- ENCRYPT: Master Range and time validity -->
+	<title>ENCRYPT: Master Range and time validity</title>
+	<choice><value>1</value><description>Master Range Start Address</description><next_level>3_1_3_1</next_level></choice>
+	<choice><value>2</value><description>Master Range End Address</description><next_level>3_1_3_2</next_level></choice>
+	<choice><value>3</value><description>Master Time Validity</description><next_level>3_1_3_3</next_level></choice>
+	<choice><next_level>3_1</next_level></choice>
+</level>
+<level>3_1_4 <!-- ENCRYPT: Slave Range and certificate -->
+	<title>ENCRYPT: Slave Range and certificate</title>
+	<choice><value>1</value><description>Slave Range Start Address</description><next_level>3_1_4_1</next_level></choice>
+	<choice><value>2</value><description>Slave Range End Address</description><next_level>3_1_4_2</next_level></choice>
+	<choice><value>3</value><description>Slave Certificate</description><next_level>3_1_4_3</next_level></choice>
+	<choice><next_level>3_1</next_level></choice>
+</level>
+<level>3_1_3_1	<!-- ENCRYPT: Master Range start address -->
+	<title>ENCRYPT: Master Range Start Address</title>
+	<display><description>ENCRYPT: Master Range Start Address</description><action>get_value<var>encryption_master_certificate_start_address</var></action></display>
+	<choice><value></value><number_char>16</number_char><description>Master range start address(hexa 8bytes 16 char)</description><action><value>set_value</value><var><name>encryption_master_certificate_start_address</name></var></action><next_level>3_1_3</next_level></choice>
+	
+	<choice><next_level>3_1_3</next_level></choice>
+</level>
+<level>3_1_3_2	<!-- ENCRYPT: Master Range end address -->
+	<title>ENCRYPT: Master Range End address</title>
+	<display><description>ENCRYPT: Master Range End Address</description><action>get_value<var>encryption_master_certificate_end_address</var></action></display>
+	<choice><value></value><number_char>16</number_char><description>Master range end address(hexa 8bytes 16 char)</description><action><value>set_value</value><var><name>encryption_master_certificate_end_address</name></var></action><next_level>3_1_3</next_level></choice>
+	<choice><next_level>3_1_3</next_level></choice>
+</level>
+<level>3_1_3_3	<!-- ENCRYPT: Master Time Validity -->
+	<title>ENCRYPT: Master Time Validity</title>
+	<display><description>ENCRYPT: Master Time Validity</description><action>get_value<var>encryption_master_certificate_validity</var></action></display>
+	<choice><value></value><number_char>8</number_char><description>Validity time(hexa 4bytes 8char)</description><action><value>set_value</value><var><name>encryption_master_certificate_validity</name></var></action><next_level>3_1_3</next_level></choice>
+	<choice><next_level>3_1_3</next_level></choice>
+</level>
+<level>3_1_4_1	<!-- ENCRYPT: Master Range start address -->
+	<title>ENCRYPT: Slave Range Start Address</title>
+	<display><description>ENCRYPT: Slave Range Start Address</description><action>get_value<var>encryption_slave_certificate_start_address</var></action></display>
+	<choice><value></value><number_char>16</number_char><description>Slave Range Start Address(hexa 8bytes 16 char)</description><action><value>set_value</value><var><name>encryption_slave_certificate_start_address</name></var></action><next_level>3_1_4</next_level></choice>
+	<choice><next_level>3_1_4</next_level></choice>
+</level>
+<level>3_1_4_2	<!-- ENCRYPT: Slave Range end address -->
+	<title>ENCRYPT: Slave Range End address</title>
+	<display><description>ENCRYPT: Slave Range End address</description><action>get_value<var>encryption_slave_certificate_end_address</var></action></display>
+	<choice><value></value><number_char>16</number_char><description>Slave range end address(hexa 8bytes 16 char)</description><action><value>set_value</value><var><name>encryption_slave_certificate_end_address</name></var></action><next_level>3_1_4</next_level></choice>
+	<choice><next_level>3_1_4</next_level></choice>
+</level>
+<level>3_1_4_3	<!-- ENCRYPT: Slave Certificate -->
+	<title>ENCRYPT: Slave certificate</title>
+	<display><description>ENCRYPT: Slave certificate</description><action>get_value<var>encryption_slave_certificate</var></action></display>
+	<choice><value></value><number_char>32</number_char><description>Slave certificate(hexa 16bytes 32char)</description><action><value>set_value</value><var><name>encryption_slave_certificate</name></var></action><next_level>3_1_4</next_level></choice>
+	<choice><next_level>3_1_4</next_level></choice>
+</level>
+
+</menu>

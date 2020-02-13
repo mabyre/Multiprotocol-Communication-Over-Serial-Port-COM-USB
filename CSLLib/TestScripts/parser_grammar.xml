@@ -1,0 +1,56 @@
+<cmd>
+	<toreader> <!! Initialization command for HCI reader: get reader RF address !!/>
+		<description>"Initialization: -> Get Reader Address</description>
+		<format>"byte"</format>
+		<tag>010101091000</tag>
+		<arglen>
+			<tag></tag>
+			<arglen>0</arglen>
+		</arglen>
+	</toreader>
+	
+	<fromreader>
+		<description>"Initialization: -> Get Reader Address</description>
+		<format>"byte"</format>
+		<tag>010101091000	
+			<arglen>
+				<tag>6</tag>
+				<arglen>1</arglen>
+			</arglen>
+			<arg>
+				<description>"Radio address"</description>
+			</arg>
+		</tag>
+	</fromreader>
+</cmd>
+
+<cmd>
+	<toreader>
+		<description>"Initialization: -> Read Parameters</description>
+		<format>"byte"</format>
+		<tag>0201</tag>
+		<tag>
+			<description>"Start address to read parameters from"</description>
+			<arglen>1</arglen>
+		</tag>
+		<tag>
+			<description>"length of parameters to read"</description>
+			<arglen>1</arglen>
+		</tag>
+		<arg>"variable"</arg>
+	</toreader>
+	
+	<fromreader>
+		<description>"Initialization: -> Read Parameters</description>
+		<format>"byte"</format>
+		<tag>0281</tag>
+		<arglen>
+			<description>"length of parameters to read"</description>
+			<tag></tag>
+			<arglen>1</arglen>
+		</arglen>
+		<arg>"variable"</arg>
+	</fromreader>
+</cmd>
+<cmd>
+

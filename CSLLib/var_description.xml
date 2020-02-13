@@ -1,0 +1,161 @@
+<var><name>default_rf_mode</name>
+	<test>0<detail>868Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>1<detail>868Mhz Frequency hopping 9600 bauds RF  NRZ</detail></test>
+	<test>2<detail>869Mhz Mono channel 500mw 19200 bauds NRZ</detail></test>
+	<test>3<detail>868Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+	<test>4<detail>Reserved</detail></test>
+	<test>5<detail>Reserved</detail></test>
+	<test>6<detail>868Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>7<detail>433Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>8<detail>433Mhz Frequency hopping 9600 bauds RF NRZ</detail></test>
+	<test>9<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>A<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>B<detail>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>C<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>D<detail>866Mhz Mono channel 9600 bauds RF NRZ (India)</detail></test>
+	<test>E<detail>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</detail></test>
+	<test>F<detail>433Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>10<detail>433Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+</var>
+
+<var><name>default_tx_channel</name><test><detail>default Tx channel</detail></test></var>
+<var><name>default_scan_period</name><test><detail>default scan period (ms)</detail></test></var>
+<var><name>default_wup_length</name><test><detail>default WUP length (ms)</detail></test></var>
+<var><name>session_type</name>
+	<test>0<detail>Local Applicative firmware upgrade</detail></test>
+	<test>1<detail>Local Rescue firmware upgrade</detail></test>
+	<test>2<detail>Local Bootloader firmware upgrade</detail></test>
+	<test>3<detail>Local Use Applicative firmware as Rescue</detail></test>
+	<test>4<detail>Remote use Applicative Firmware as Rescue</detail></test>
+	<test>5<detail>Local reboot on rescue firmware</detail></test>
+	<test>6<detail>Remote Reboot on Rescue firmware</detail></test>
+	<test>7<detail>Applicative firmware to push Over The Air</detail></test>
+	<test>8<detail>Rescue firmware to push Over The Air</detail></test>
+	<test>9<detail>Bootloader firmware to push Over The Air</detail></test>
+	<test>10<detail>Local My applicative firmware to push over the air</detail></test>
+	<test>11<detail>Local My rescue firmware to push over the air</detail></test>
+	<test>12<detail>Local My bootloader firmware to push over the air</detail></test>
+	<test>13<detail>Remote My applicative firmware to push over the air</detail></test>
+	<test>14<detail>Remote My rescue firmware to push over the air</detail></test>
+	<test>15<detail>Remote My bootloader firmware to push over the air</detail></test>
+	<test>16<detail>local download applicative firmware to forward</detail></test>
+	<test>17<detail>local download rescue firmware to forward</detail></test>
+	<test>18<detail>local download bootloader firmware to forward</detail></test>
+	<test>19<detail>remote download applicative firmware to forward</detail></test>
+	<test>20<detail>remote download rescue firmware to forward</detail></test>
+	<test>21<detail>remote download bootloader firmware to forward</detail></test>
+	<test>22<detail>Local applicative firmware upgrade</detail></test>
+</var>
+
+<var><name>ota_activate_encryption</name>
+	<test>0<detail>Activate Encryption: No (0)</detail></test>
+	<test>1<detail>Activate Encryption: Yes (1)</detail></test>
+</var>
+
+<var><name>ota_activate_packing</name>
+	<test>0<detail>Activate Packing: No (0)</detail></test>
+	<test>1<detail>Activate Packing: Yes (1)</detail></test>
+</var>
+
+<var><name>ota_allow_downgrade</name>
+	<test>0<detail>Allow downgrade: No (0)</detail></test>
+	<test>1<detail>Allow downgrade: Yes (1)</detail></test>
+</var>
+
+<var><name>ota_frame_encryption_key</name><test><detail>Encryption key for OTA frame</detail></test></var>
+
+<var><name>ota_transaction_id</name><test><detail>OTA Transaction Id on 2bytes entered as decimal</detail></test></var>
+
+<var><name>rescue_firmware_number</name><test><detail>Rescue FW Number (hexa 2bytes aka 4 chars)</detail></test></var>
+
+<var><name>target_device_firmware_number</name><test><detail>FW Number of Device to Upgrade (hexa 2bytes aka 4chars)</detail></test></var>
+
+<var><name>new_firmware_version</name><test><detail>new Firmware version (hexa 8bytes)</detail></test></var>
+
+<var><name>device_current_version_start_range</name><test><detail>FW version start range(hexa 8bytes)</detail></test></var>
+
+<var><name>device_current_version_end_range</name><test><detail>FW version end range(hexa 8bytes)</detail></test></var>
+
+<var><name>ota_routing_nb_relays</name><test><detail>OTA routing : Number of relays</detail></test></var>
+
+<var><name>relay_1_address</name><test><detail>OTA routing : Relay 1 address</detail></test></var>
+
+<var><name>relay_2_address</name><test><detail></detail>OTA routing : Relay 2 address</test></var>
+
+<var><name>relay_3_address</name><test><detail>OTA routing : Relay 3 address</detail></test></var>
+
+<var><name>destination_address</name><test><detail>OTA: Destination Device Address</detail></test></var>
+
+<var><name>ota_addressing_type</name>
+	<test>1<detail>Unicast</detail></test>
+	<test>2<detail>Multicast</detail></test>
+	<test>3<detail>Broadcast</detail></test>
+</var>
+
+<var><name>ota_group_multi_cast</name><test><detail>OTA: Group Multicast</detail></test></var>
+
+
+<var><name>relay_rf_mode</name>
+	<test>0<detail>868Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>1<detail>868Mhz Frequency hopping 9600 bauds RF  NRZ</detail></test>
+	<test>2<detail>869Mhz Mono channel 500mw 19200 bauds NRZ</detail></test>
+	<test>3<detail>868Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+	<test>4<detail>Reserved</detail></test>
+	<test>5<detail>Reserved</detail></test>
+	<test>6<detail>868Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>7<detail>433Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>8<detail>433Mhz Frequency hopping 9600 bauds RF NRZ</detail></test>
+	<test>9<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>A<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>B<detail>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>C<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>D<detail>866Mhz Mono channel 9600 bauds RF NRZ (India)</detail></test>
+	<test>E<detail>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</detail></test>
+	<test>F<detail>433Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>10<detail>433Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+</var>
+
+<var><name>relay_tx_channel</name><test><detail>Relay Tx channel</detail></test></var>
+<var><name>relay_scan_period</name><test><detail>Relay scan period (ms)</detail></test></var>
+<var><name>relay_wup_length</name><test><detail>Relay WUP length (ms)</detail></test></var>
+
+<var><name>destination_address</name><test><detail>Destination address</detail></test></var>
+
+<var><name>ota_forward_addressing_type</name>
+	<test>1<detail>Unicast</detail></test>
+	<test>2<detail>Multicast</detail></test>
+	<test>3<detail>Broadcast</detail></test>
+</var>
+
+<var><name>destination_address_to_forward_to</name><test><detail>destination_address_to_forward_to</detail></test></var>
+<var><name>tx_channel_to_forward_to</name><test><detail>OTA: Device address to Tx Channel</detail></test></var>
+<var><name>to_forward_to_rf_mode</name>
+	<test>0<detail>868Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>1<detail>868Mhz Frequency hopping 9600 bauds RF  NRZ</detail></test>
+	<test>2<detail>869Mhz Mono channel 500mw 19200 bauds NRZ</detail></test>
+	<test>3<detail>868Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+	<test>4<detail>Reserved</detail></test>
+	<test>5<detail>Reserved</detail></test>
+	<test>6<detail>868Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>7<detail>433Mhz Mono channel 9600 bauds RF NRZ</detail></test>
+	<test>8<detail>433Mhz Frequency hopping 9600 bauds RF NRZ</detail></test>
+	<test>9<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>A<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>B<detail>915Mhz Frequency hopping 19200 bauds RF NRZ FCC15.427 (US)</detail></test>
+	<test>C<detail>915Mhz Mono channel 19200 bauds RF NRZ FCC15.427 (Australia)</detail></test>
+	<test>D<detail>866Mhz Mono channel 9600 bauds RF NRZ (India)</detail></test>
+	<test>E<detail>866Mhz Frequency hopping 9600 bauds RF  NRZ (India)</detail></test>
+	<test>F<detail>433Mhz Mono channel 19200 bauds RF NRZ</detail></test>
+	<test>10<detail>433Mhz  Frequency hopping 19200 bauds RF NRZ</detail></test>
+</var>
+
+
+
+<var><name>encryption_password</name><test><detail>ENCRYPT : AES Password</detail></test></var>
+<var><name>encryption_random_value</name><test><detail>ENCRYPT: Random Value for key index</detail></test></var>
+<var><name>encryption_master_certificate_start_address</name><test><detail>ENCRYPT: Master Range Start Address</detail></test></var>
+<var><name>encryption_master_certificate_end_address</name><test><detail>ENCRYPT: Master Range End Address</detail></test></var>
+<var><name>encryption_master_certificate_validity</name><test><detail>ENCRYPT: Master Time Validity</detail></test></var>
+<var><name>encryption_slave_certificate_start_address</name><test><detail>ENCRYPT: Slave Range Start Address</detail></test></var>
+<var><name>encryption_slave_certificate_end_address</name><test><detail>ENCRYPT: Slave Range End address</detail></test></var>
+<var><name>encryption_slave_certificate</name><test><detail>ENCRYPT: Slave certificate</detail></test></var>

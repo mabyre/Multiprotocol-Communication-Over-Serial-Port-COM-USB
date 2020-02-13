@@ -1,0 +1,8 @@
+READER_IP_PORT 192.168.0.110 3333	// connect to reader with address 192.168.0.100 on port 3333
+CMD 010101091000			// initialization command to get reader address
+CMD 02010303				// read from address 3, 3 bytes
+REPEAT_START 1				// repeat this command or not
+REPEAT_STOP
+DELAY 2						// delay of 2s
+CMD EE0801181A4D90152920	// applicative command 20 addressed to device 181A4D901529 on channel 01
+CMD EE0E01FFFFFFFFFFFF34000100150A15010B	// applicative command, broadcast	

@@ -1,0 +1,6 @@
+<test_script>
+	<test_file>
+		<script_file_name> </script_file_name>
+		<script_file_output>"test1_output.xml"</script_file_output>
+	</test_file>
+</test_script>

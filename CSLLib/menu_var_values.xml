@@ -1,0 +1,40 @@
+<var_values>
+<var><name>default_rf_mode</name><value>  1</value><value_max_len>3</value_max_len></var>
+<var><name>default_tx_channel</name><value>  0</value><value_max_len>3</value_max_len></var>
+<var><name>default_scan_period</name><value>20000</value><value_max_len>5</value_max_len></var>
+<var><name>default_wup_length</name><value>15000</value><value_max_len>5</value_max_len></var>
+<var><name>session_type</name><value> 0</value><value_max_len>2</value_max_len></var>
+<var><name>ota_activate_encryption</name><value> 0</value><value_max_len>2</value_max_len></var>
+<var><name>ota_activate_packing</name><value> 1</value><value_max_len>2</value_max_len></var>
+<var><name>ota_allow_downgrade</name><value> 1</value><value_max_len>2</value_max_len></var>
+<var><name>ota_frame_encryption_key</name><value>0102030405060708</value><value_max_len>16</value_max_len></var>
+<var><name>ota_transaction_id</name><value>51966</value><value_max_len>5</value_max_len></var>
+<var><name>rescue_firmware_number</name><value>8002</value><value_max_len>4</value_max_len></var>
+<var><name>target_device_firmware_number</name><value>8002</value><value_max_len>4</value_max_len></var>
+<var><name>new_firmware_version</name><value>00010002</value><value_max_len>8</value_max_len></var>
+<var><name>device_current_version_start_range</name><value>00010001</value><value_max_len>8</value_max_len></var>
+<var><name>device_current_version_end_range</name><value>00010001</value><value_max_len>8</value_max_len></var>
+<var><name>ota_routing_nb_relays</name><value>0</value><value_max_len>1</value_max_len></var>
+<var><name>relay_1_address</name><value>012004300000</value><value_max_len>8</value_max_len></var>
+<var><name>relay_2_address</name><value>012004300000</value><value_max_len>8</value_max_len></var>
+<var><name>relay_3_address</name><value>012004300000</value><value_max_len>8</value_max_len></var>
+<var><name>destination_address</name><value>15394B311202</value><value_max_len>12</value_max_len></var>
+<var><name>ota_addressing_type</name><value> 1</value><value_max_len>2</value_max_len></var>
+<var><name>ota_group_multi_cast</name><value>125</value><value_max_len>3</value_max_len></var>
+<var><name>relay_rf_mode</name><value> 6</value><value_max_len>2</value_max_len></var>
+<var><name>relay_tx_channel</name><value>  0</value><value_max_len>3</value_max_len></var>
+<var><name>relay_scan_period</name><value>   20</value><value_max_len>5</value_max_len></var>
+<var><name>relay_wup_length</name><value>   30</value><value_max_len>5</value_max_len></var>
+<var><name>ota_forward_addressing_type</name><value>  1</value><value_max_len>3</value_max_len></var>
+<var><name>destination_address_to_forward_to</name><value>15390B908959</value><value_max_len>12</value_max_len></var>
+<var><name>tx_channel_to_forward_to</name><value>  0</value><value_max_len>3</value_max_len></var>
+<var><name>to_forward_to_rf_mode</name><value> 6</value><value_max_len>8</value_max_len>2</var>
+<var><name>encryption_password</name><value>0000000000000000</value><value_max_len>16</value_max_len></var>
+<var><name>encryption_random_value</name><value>50A3B03E</value><value_max_len>8</value_max_len></var>
+<var><name>encryption_master_certificate_start_address</name><value>15394B908800</value><value_max_len>12</value_max_len></var>
+<var><name>encryption_master_certificate_end_address</name><value>15394B9089FF</value><value_max_len>12</value_max_len></var>
+<var><name>encryption_master_certificate_validity</name><value>0080000</value><value_max_len>8</value_max_len></var>
+<var><name>encryption_slave_certificate_start_address</name><value>15394B909000</value><value_max_len>12</value_max_len></var>
+<var><name>encryption_slave_certificate_end_address</name><value>19394E929200</value><value_max_len>12</value_max_len></var>
+<var><name>encryption_slave_certificate</name><value>abcdefabcdefabcdefabcdefabcdefab</value><value_max_len>32</value_max_len></var>
+</var_values>

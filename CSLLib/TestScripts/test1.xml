@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- declaration of Reader -->
+<Reader>
+<ip_addr>"192.168.0.110"</ip_addr>
+	<!--- cmd definition-->
+	<repeat>1
+		<cmd>
+			<value>
+				<format>"hex"</format>	<!-- format can be "hex" "file" with relative path to the executable, "string"-->
+				010101091000
+			</value>
+		</cmd>
+		<delay>100</delay>
+	</repeat>
+
+	<!-- add a delay before next cmd: delay is ms -->
+	<delay>0</delay>
+	
+	<!--- cmd definition-->
+	<cmd>
+		
+		<repeat>1
+			<value>
+				<format>"hex"</format>	<!-- format can be "hex" "file" with relative path to the executable, "string"-->
+				010101091000
+			</value>
+		</repeat>
+		<delay>0</delay>
+	</cmd>
+	
+	<!-- add a delay before next cmd: delay is ms -->
+	<delay>0</delay>
+	</Reader>
+
