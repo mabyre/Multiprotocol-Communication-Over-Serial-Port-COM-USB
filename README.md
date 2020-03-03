@@ -12,4 +12,6 @@ This project is made up of three parts.
 - **PMLite** is for Protocol Machinerie Light that deal with different platforme implementation
 - **TestPThread** is the upper part of this project, it test and use the two others, it take the place of the User Interface when there is no
 
-Why this very valuable project is there ? Just for share with you who got here. If you have questions about this source code feel free to ask me.
+You can get informations about PMLite here : [TraceReporter](https://sodevlog-tracereporter.blogspot.com "TraceReporter")
+
+Why this very valuable project is there ? Just for share with you who got here. If you have any questions about this source code feel free to ask me.
