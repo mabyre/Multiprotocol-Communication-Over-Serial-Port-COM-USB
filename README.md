@@ -14,4 +14,6 @@ This project is made up of three parts.
 
 You can get informations about PMLite here : [TraceReporter](https://sodevlog-tracereporter.blogspot.com "TraceReporter")
 
+OTA means Over The Air
+
 Why this very valuable project is there ? Just for share with you who got here. If you have any questions about this source code feel free to ask me.
