@@ -2,9 +2,9 @@
 This is a very large project initiated many years ago
 Multiprotocol Communication Over Serial Port COM USB
 
-This project work with [RFID-CloverWiever](https://github.com/mabyre/RFID-CloverWiever "RFID-CloverWiever")
+This project works with [RFID-CloverWiever](https://github.com/mabyre/RFID-CloverWiever "RFID-CloverWiever")
 
-RFID-CloverWiever is the Graphique Interface written in Qt/C++.
+RFID-CloverWiever is the Graphical Interface written in Qt/C++.
 
 This project is made up of three parts.
 
