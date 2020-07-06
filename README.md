@@ -15,3 +15,6 @@ You can get informations about PMLite here : [TraceReporter](https://sodevlog-tr
 OTA means Over The Air
 
 Why this very valuable project is there ? Just for share with you who got here. If you have any questions about this source code feel free to ask me.
+
+## Requirements
+Eclipse Luna
