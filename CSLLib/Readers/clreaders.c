@@ -101,16 +101,16 @@ e_Result cl_initReaderSetDefaultFields( e_StackSupport eType, clu8 *pucReaderNam
         // copy data
         memcpy( pCtxt->ptCslReader->tCOMParams.aucPortName, pCOMReaderParams->aucPortName, sizeof( pCOMReaderParams->aucPortName ) );
         pCtxt->ptCslReader->tCOMParams.eParityBits                      = pCOMReaderParams->eParityBits;
-        pCtxt->ptCslReader->tCOMParams.eStopBits                         = pCOMReaderParams->eStopBits;
-        pCtxt->ptCslReader->tCOMParams.eBaudRate                         = pCOMReaderParams->eBaudRate;
-        pCtxt->ptCslReader->tCOMParams.eByteSize                         = pCOMReaderParams->eByteSize;
-        pCtxt->ptCslReader->tCOMParams.u8ReadIntervallTimeout             = pCOMReaderParams->u8ReadIntervallTimeout;
-        pCtxt->ptCslReader->tCOMParams.u8ReadTotalTimeoutConstant         = pCOMReaderParams->u8ReadTotalTimeoutConstant;
+        pCtxt->ptCslReader->tCOMParams.eStopBits                        = pCOMReaderParams->eStopBits;
+        pCtxt->ptCslReader->tCOMParams.eBaudRate                        = pCOMReaderParams->eBaudRate;
+        pCtxt->ptCslReader->tCOMParams.eByteSize                        = pCOMReaderParams->eByteSize;
+        pCtxt->ptCslReader->tCOMParams.u8ReadIntervallTimeout           = pCOMReaderParams->u8ReadIntervallTimeout;
+        pCtxt->ptCslReader->tCOMParams.u8ReadTotalTimeoutConstant       = pCOMReaderParams->u8ReadTotalTimeoutConstant;
         pCtxt->ptCslReader->tCOMParams.u8ReadTotalTimeoutMultiplier     = pCOMReaderParams->u8ReadTotalTimeoutMultiplier;
         pCtxt->ptCslReader->tCOMParams.u8WriteTotalTimeoutConstant      = pCOMReaderParams->u8WriteTotalTimeoutConstant;
-        pCtxt->ptCslReader->tCOMParams.u8WriteTotalTimeoutMultiplier     = pCOMReaderParams->u8WriteTotalTimeoutMultiplier;
+        pCtxt->ptCslReader->tCOMParams.u8WriteTotalTimeoutMultiplier    = pCOMReaderParams->u8WriteTotalTimeoutMultiplier;
         pCtxt->ptCslReader->tCOMParams.tRange.u64startRange             = pCOMReaderParams->tRange.u64startRange;
-        pCtxt->ptCslReader->tCOMParams.tRange.u64stopRange                = pCOMReaderParams->tRange.u64stopRange;
+        pCtxt->ptCslReader->tCOMParams.tRange.u64stopRange              = pCOMReaderParams->tRange.u64stopRange;
         pCtxt->ptCslReader->tCOMParams.tRange.u32Port                   = 0;
         pCtxt->ptCslReader->tCOMParams.tRange.pNext                     = pCOMReaderParams->tRange.pNext;
     }
@@ -118,7 +118,7 @@ e_Result cl_initReaderSetDefaultFields( e_StackSupport eType, clu8 *pucReaderNam
     if ( pBTReaderParams )
     {
         // copy data
-        pCtxt->ptCslReader->tBT.u8Unused                 = pBTReaderParams->u8Unused ;
+        pCtxt->ptCslReader->tBT.u8Unused                = pBTReaderParams->u8Unused ;
         pCtxt->ptCslReader->tBT.tRange.u64startRange    = pBTReaderParams->tRange.u64startRange;
         pCtxt->ptCslReader->tBT.tRange.u64stopRange     = pBTReaderParams->tRange.u64startRange;
         pCtxt->ptCslReader->tBT.tRange.u32Port          = 0;
@@ -166,10 +166,10 @@ int GetDirectoryName(char* aFullExeName, char* aDirectoryWithoutExeName)
 \*-----------------------------------------------------------------------------------------*/
 e_Result cl_InitReadersFromFile(char **friendlyNames)
 {
-    FILE              *file_in;
-    errno_t            err_no;
-    t_clContext    *pCtxt        = CL_NULL;
-    e_Result        status            = CL_ERROR;
+    FILE            *file_in;
+    errno_t          err_no;
+    t_clContext     *pCtxt = CL_NULL;
+    e_Result         status = CL_ERROR;
     char             ligne[STRING_LENGTH];
     char             directory_name[STRING_LENGTH];
     char             file_name[STRING_LENGTH];
